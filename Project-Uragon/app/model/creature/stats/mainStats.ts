@@ -16,20 +16,58 @@ export class MainStats
   private lukMod:number; //- Luck Modifier
 
   constructor()
+  constructor(json:any)
+  constructor(json?:any)
   {
-    this.str = 0;
-    this.int = 0;
-    this.dex = 0;
-    this.vit = 0;
-    this.agi = 0;
-    this.luk = 0;
+    if(json)
+    {
+      this.str = json[StatsEnum.STRENGTH];
+      this.int = json[StatsEnum.INTELLIGENCE];
+      this.dex = json[StatsEnum.DEXTERITY];
+      this.vit = json[StatsEnum.VITALITY];
+      this.agi = json[StatsEnum.AGILITY];
+      this.luk = json[StatsEnum.LUCK];
 
-    this.strMod = 0;
-    this.intMod = 0;
-    this.dexMod = 0;
-    this.vitMod = 0;
-    this.agiMod = 0;
-    this.lukMod = 0;
+      this.strMod = json[StatsEnum.STRENGTH_MOD];
+      this.intMod = json[StatsEnum.INTELLIGENCE_MOD];
+      this.dexMod = json[StatsEnum.DEXTERITY_MOD];
+      this.vitMod = json[StatsEnum.VITALITY_MOD];
+      this.agiMod = json[StatsEnum.AGILITY_MOD];
+      this.lukMod = json[StatsEnum.LUCK_MOD];
+    }else{
+      this.str = 0;
+      this.int = 0;
+      this.dex = 0;
+      this.vit = 0;
+      this.agi = 0;
+      this.luk = 0;
+
+      this.strMod = 0;
+      this.intMod = 0;
+      this.dexMod = 0;
+      this.vitMod = 0;
+      this.agiMod = 0;
+      this.lukMod = 0;
+    }
+  }
+
+  public toJSON()
+  {
+    return
+    {
+      StatsEnum.STRENGTH:this.str,
+      StatsEnum.INTELLIGENCE:this.int,
+      StatsEnum.DEXTERITY:this.dex,
+      StatsEnum.VITALITY:this.vit,
+      StatsEnum.AGILITY:this.agi,
+      StatsEnum.LUCK:this.luk,
+      StatsEnum.STRENGTH_MOD:this.strMod,
+      StatsEnum.INTELLIGENCE_MOD:this.intMod,
+      StatsEnum.DEXTERITY_MOD:this.dexMod,
+      StatsEnum.VITALITY_MOD:this.vitMod,
+      StatsEnum.AGILITY_MOD:this.agiMod,
+      StatsEnum.LUCK_MOD:this.lukMod
+    };
   }
 
   public getSTR() { return (this.str + this.strMod); }
