@@ -53,21 +53,20 @@ export class MainStats
 
   public toJSON()
   {
-    return
-    {
-      StatsEnum.STRENGTH:this.str,
-      StatsEnum.INTELLIGENCE:this.int,
-      StatsEnum.DEXTERITY:this.dex,
-      StatsEnum.VITALITY:this.vit,
-      StatsEnum.AGILITY:this.agi,
-      StatsEnum.LUCK:this.luk,
-      StatsEnum.STRENGTH_MOD:this.strMod,
-      StatsEnum.INTELLIGENCE_MOD:this.intMod,
-      StatsEnum.DEXTERITY_MOD:this.dexMod,
-      StatsEnum.VITALITY_MOD:this.vitMod,
-      StatsEnum.AGILITY_MOD:this.agiMod,
-      StatsEnum.LUCK_MOD:this.lukMod
-    };
+    var json = `{
+      ${StatsEnum.STRENGTH}:${this.str},
+      ${StatsEnum.INTELLIGENCE}:${this.int},
+      ${StatsEnum.DEXTERITY}:${this.dex},
+      ${StatsEnum.VITALITY}:${this.vit},
+      ${StatsEnum.AGILITY}:${this.agi},
+      ${StatsEnum.LUCK}:${this.luk},
+      ${StatsEnum.STRENGTH_MOD}:${this.strMod},
+      ${StatsEnum.INTELLIGENCE_MOD}:${this.intMod},
+      ${StatsEnum.DEXTERITY_MOD}:${this.dexMod},
+      ${StatsEnum.VITALITY_MOD}:${this.vitMod},
+      ${StatsEnum.AGILITY_MOD}:${this.agiMod},
+      ${StatsEnum.LUCK_MOD}:${this.lukMod}
+    }`;
   }
 
   public getSTR() { return (this.str + this.strMod); }

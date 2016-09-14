@@ -1,15 +1,15 @@
-export enum StatsEnum
-{
-  STRENGTH = "str",
-  INTELLIGENCE = "int",
-  DEXTERITY = "dex",
-  VITALITY = "vit",
-  AGILITY = "agi",
-  LUCK = "luk",
-  STRENGTH_MOD = "strMod",
-  INTELLIGENCE_MOD = "intMod",
-  DEXTERITY_MOD = "dexMod",
-  VITALITY_MOD = "vitMod",
-  AGILITY_MOD = "agiMod",
-  LUCK_MOD = "lukMod"
+export class StatsEnum
+{//Class because.. Typescript..
+  static STRENGTH = "str";
+  static INTELLIGENCE = "int";
+  static DEXTERITY = "dex";
+  static VITALITY = "vit";
+  static AGILITY = "agi";
+  static LUCK = "luk";
+  static STRENGTH_MOD = "strMod";
+  static INTELLIGENCE_MOD = "intMod";
+  static DEXTERITY_MOD = "dexMod";
+  static VITALITY_MOD = "vitMod";
+  static AGILITY_MOD = "agiMod";
+  static LUCK_MOD = "lukMod";
 }
