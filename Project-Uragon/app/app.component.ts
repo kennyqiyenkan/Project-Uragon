@@ -1,9 +1,15 @@
-import {Component} from "@angular/core";
-import {NS_ROUTER_DIRECTIVES} from "nativescript-angular/router";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
   selector: "main",
-  directives: [NS_ROUTER_DIRECTIVES],
   template: "<page-router-outlet></page-router-outlet>"
 })
-export class AppComponent {}
+export class AppComponent implements OnInit
+{
+  ngOnInit()
+  {
+    console.log(`
+      DEBUG: AppComponent - ngOnInit()
+      `);
+  }
+}

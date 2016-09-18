@@ -1,47 +1,58 @@
 import { Component, OnInit } from "@angular/core";
+import { RouterExtensions } from "nativescript-angular/router";
+
 @Component({
-  selector: "login-component",
-  templateUrl: "pages/login/login.component.html",
+    selector: "login-component",
+    templateUrl: "pages/login/login.component.html",
 })
 export class LoginComponent implements OnInit
 {
-  private username = "";
-  private password = "";
+    private email = "";
+    private password = "";
 
-  ngOnInit()
-  {
-    console.log(`
-      DEBUG LOG: LoginComponent - ngOnInit()
-      `);
-  }
+    constructor(private routerExtensions: RouterExtensions) {}
 
-  private login()
-  {//TODO: Pull in username and password and send to server securely
-    console.log(`
-      DEBUG LOG: LoginComponent - login()
-      username: ${this.username}
-      password: ${this.password}
-      `);
-  }
+    ngOnInit()
+    {
+      console.log(`
+        DEBUG: LoginComponent - ngOnInit()
+        `);
+    }
 
-  private success()
-  {//TODO: Handle login success
-    console.log(`
-      DEBUG LOG: LoginComponent - success()
-      `);
-  }
+    private login()
+    {
+      console.log(`
+        DEBUG: LoginComponent - login()
+        email    : ${this.email}
+        password : ${this.password}
+        `);
+    }
 
-  private failed()
-  {//TODO: Handle login failure
-    console.log(`
-      DEBUG LOG: LoginComponent - failed()
-      `);
-  }
+    private success()
+    {
+      console.log(`
+        DEBUG: LoginComponent - success()
+        `);
+    }
 
-  private register()
-  {//TODO: Move to Register Page
-    console.log(`
-      DEBUG LOG: LoginComponent - register()
-      `);
-  }
+    private failure()
+    {
+      console.log(`
+        DEBUG: LoginComponent - failure()
+        `);
+    }
+
+    private register()
+    {
+      console.log(`
+        DEBUG: LoginComponent - register()
+        `);
+      this.routerExtensions.navigate(["/registration"], {
+        transition: {
+            name: "flip",
+            duration: 2000,
+            curve: "linear"
+        }
+      });
+    }
 }

@@ -6,7 +6,9 @@ typings
 .tscache
 
 app/**/*.js
-app/**/*.map
+app/**/*.js.map
+app/*.js
+app/*.js.map
 platforms
 lib
 

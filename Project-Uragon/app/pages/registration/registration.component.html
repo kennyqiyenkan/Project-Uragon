@@ -1,0 +1,14 @@
+  <StackLayout orientation="vertical"
+      verticalAlignment="center"
+      #registrationContainer>
+      <TextField hint="Username" autocorrect="false"
+      autocapitalizationType="none" [(ngModel)]="username"></TextField>
+      <TextField hint="Password" secure="true"
+      [(ngModel)]="password"></TextField>
+      <TextField hint="Confirm Password" secure="true"
+      [(ngModel)]="confirmPassword"></TextField>
+      <TextField hint="Email" [(ngModel)]="email"></TextField>
+      <TextField hint="Confirm Email" [(ngModel)]="confirmEmail"></TextField>
+      <button text="Register" (tap)="register()"></button>
+      <button text="Back" (tap)="back()"></button>
+  </StackLayout>
